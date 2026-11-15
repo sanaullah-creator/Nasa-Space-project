@@ -1,0 +1,156 @@
+@import 'tailwindcss';
+
+/* ---------------- Design tokens ---------------- */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Orbitron', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-space-950: #03040c;
+  --color-space-900: #050816;
+  --color-space-850: #070b1f;
+  --color-space-800: #0b1130;
+  --color-space-700: #121a45;
+  --color-space-600: #1c2660;
+
+  --color-mars-100: #ffe6d9;
+  --color-mars-200: #ffcbb0;
+  --color-mars-300: #ffb08a;
+  --color-mars-400: #ff8a5c;
+  --color-mars-500: #f2603a;
+  --color-mars-600: #d9431f;
+  --color-mars-700: #a8321a;
+
+  --color-nebula-200: #c9e6ff;
+  --color-nebula-300: #9fd3ff;
+  --color-nebula-400: #5ab0ff;
+  --color-nebula-500: #2f8cf0;
+  --color-nebula-600: #1d6fd1;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-orbit: orbit 40s linear infinite;
+  --animate-orbit-slow: orbit 90s linear infinite;
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-toast-in: toast-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes orbit {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateY(24px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+/* ---------------- Base ---------------- */
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-space-900 text-slate-200 font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 85% -10%, rgba(242, 96, 58, 0.12), transparent 60%),
+      radial-gradient(900px 600px at -10% 20%, rgba(47, 140, 240, 0.12), transparent 60%),
+      linear-gradient(180deg, #050816 0%, #03040c 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading text-white;
+  }
+  ::selection {
+    background: rgba(242, 96, 58, 0.4);
+    color: white;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-nebula-400);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ---------------- Components (custom utilities) ---------------- */
+@utility glass {
+  @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.05) inset, 0 20px 60px -30px rgba(0, 0, 0, 0.8);
+}
+@utility glass-strong {
+  @apply rounded-2xl border border-white/10 bg-space-800/80 backdrop-blur-xl;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-gradient-to-r from-mars-500 to-mars-600 text-white shadow-lg shadow-mars-600/30 hover:from-mars-400 hover:to-mars-500 hover:shadow-mars-500/40 active:scale-[0.98];
+}
+@utility btn-secondary {
+  @apply btn border border-white/15 bg-white/5 text-white hover:border-nebula-400/60 hover:bg-nebula-500/10 active:scale-[0.98];
+}
+@utility btn-ghost {
+  @apply btn px-3 text-slate-300 hover:bg-white/5 hover:text-white;
+}
+@utility chip {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:border-white/25 hover:text-white;
+}
+@utility chip-active {
+  @apply border-mars-400/70 bg-mars-500/15 text-white;
+}
+@utility eyebrow {
+  @apply font-display text-[0.7rem] font-bold uppercase tracking-[0.25em] text-mars-400;
+}
+@utility text-gradient {
+  @apply bg-gradient-to-r from-white via-mars-200 to-mars-400 bg-clip-text text-transparent;
+}
+@utility text-gradient-blue {
+  @apply bg-gradient-to-r from-nebula-300 via-white to-nebula-400 bg-clip-text text-transparent;
+}
+@utility input {
+  @apply w-full rounded-xl border border-white/10 bg-space-850/80 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 outline-none transition focus:border-nebula-400/70 focus:ring-2 focus:ring-nebula-400/20;
+}
+@utility card-hover {
+  @apply transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:shadow-2xl hover:shadow-nebula-600/10;
+}
+
+/* ---------------- Utilities ---------------- */
+.planet-glow {
+  box-shadow:
+    0 0 60px 10px rgba(242, 96, 58, 0.35),
+    0 0 160px 40px rgba(242, 96, 58, 0.15),
+    inset -30px -20px 60px rgba(0, 0, 0, 0.6);
+}
+.moon-glow {
+  box-shadow:
+    0 0 50px 8px rgba(203, 213, 225, 0.2),
+    inset -18px -12px 30px rgba(0, 0, 0, 0.55);
+}
+.scrollbar-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
