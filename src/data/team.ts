@@ -20,6 +20,16 @@ export const team: TeamMember[] = [
     accent: '#f2603a',
   },
   {
+    id: 'mohsin-ali',
+    name: 'Mohsin Ali',
+    role: 'AI Engineer & FullStack Developer',
+    photo: 'team/mohsin.jpg',
+    bio: 'Contributed to building the complete Cosmic Lost & Found experience, developing core application functionality, connecting interactive features.',
+    responsibilities: ['Full-stack application development', 'Component & architecture', 'Application functionality', 'performance improvements'],
+    skills: ['TypeScript', 'React', 'Vite', 'Component Architecture'],
+    accent: '#11a5d6',
+  },
+  {
     id: 'khuzaima',
     name: 'Khuzaima',
     role: 'NASA Researcher',
@@ -48,5 +58,15 @@ export const team: TeamMember[] = [
     responsibilities: ['Interactive map & timeline', 'Quiz & Patch Lab features', 'Testing on desktop & mobile', 'Demo video support'],
     skills: ['JavaScript', 'React', 'Testing', 'Debugging'],
     accent: '#a78bfa',
+  },
+  {
+    id: 'm-ammar',
+    name: 'Muhammad Ammar Tahir',
+    role: 'Frontend Developer',
+    photo: 'team/ammar.jpg',
+    bio: 'Built the interactive features and Web Components to make it eye catching.',
+    responsibilities: ['Interactive Ui & Components', 'Lab features','Enhance Ui'],
+    skills: ['JavaScript', 'React', "vite", 'Testing', 'Debugging'],
+    accent: '#073E98',
   },
 ];

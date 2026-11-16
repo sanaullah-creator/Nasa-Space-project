@@ -34,7 +34,7 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-4 pb-28 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:pb-36 lg:pt-32">
         <div className="max-w-3xl animate-fade-up">
           <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-mars-400/30 bg-mars-500/10 px-3 py-1.5">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden /> NASA Space Apps Challenge · Interactive Space Museum
+            <Sparkles className="h-3.5 w-3.5" aria-hidden /> NASA SPACE APPS CHALLENGE · COSMIC SPACE MUSEUM
           </p>
           <h1 className="mt-6 font-display text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             <span className="text-gradient">Abandoned</span>

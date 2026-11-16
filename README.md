@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # COSMIC LOST & FOUND
 
 > **Abandoned but not Forgotten.**
@@ -24,8 +23,7 @@ An interactive, cinematic space museum for school-age visitors and young space f
 | **Quiz** | 14 multiple-choice questions, instant feedback with explanations, scoring, ranks, answer review, restart; progress **saved in localStorage** |
 | **Achievements** | 12 badges (Moon Explorer, Mars Explorer, Mission Historian, Space Knowledge Expert…) with progress bars, unlock toasts and reset |
 | **Patch Lab** | Design a mission patch (shape, colours, emblem, names, stars), save it, and download it as **SVG or PNG** |
-| **Accounts** | Register, Login (with "keep me logged in"), Log out page, Profile with **Overview / Edit profile / Security** tabs (change name, avatar colour, favourite mission, bio, password, delete account). Header shows the signed-in user with a dropdown menu. Each user's badges, quiz progress and patch are saved separately |
-| **Credits** | Team page with photos, roles, contributions and skills for all 4 members (edit them in `src/data/team.ts`, photos in `public/team/`) |
+| **Accounts** | Register, Login (with "keep me logged in"), Log out page, Profile with **Overview / Edit profile / Security** tabs (change name, avatar colour, favourite mission, bio, password, delete account). Header shows the signed-in user with a dropdown menu. Each user's badges, quiz progress and patch are saved separately
 | **About & Sources** | Purpose, educational goals, Space Apps connection, accuracy promise, image credits, general and per-mission references |
 
 **Accessibility:** skip link, semantic landmarks, keyboard-operable map markers, `aria-pressed`/`aria-expanded`/live regions, visible focus rings and `prefers-reduced-motion` support.
@@ -113,28 +111,7 @@ This downloads all 15 NASA photos into `public/images/` so they're bundled with 
 
 To change a mission photo, edit its entry in `src/data/missionImages.json` (`src`, `alt`, `credit`, `sourceUrl`), delete `public/images/<mission-id>.jpg`, and run `npm run images` again (or `npm run images -- --force` to re-download everything). Keep NASA's credit line and don't imply NASA endorsement.
 
----
 
-## 🔬 Accuracy notes
-
-- Facts were checked against NASA Science, JPL, Johns Hopkins APL and NSSDCA pages, linked on every mission page. Current statuses were checked in **November 2026** (for example, Perseverance passing Opportunity's driving record on 11 Oct 2026; Voyager 1 reaching one light-day on 18 Nov 2026; New Horizons leaving hibernation on 23 Jun 2026).
-- Statuses are deliberately nuanced: **Active, Mission ended, Inactive, Silent, Intentionally left behind**, plus a separate **Still travelling** flag.
-- Coordinates are approximate and rounded; basemap features are simplified illustrations.
-- *Robot's Last Message* texts are creative writing, labelled as such everywhere. Opportunity's famous "my battery is low" line is explained as a journalist's paraphrase, not a real message.
-- Some statuses change over time (Voyager instruments, New Horizons hibernation). Review `statusNote`, `whereNow` and `deepSpace` in `missions.ts` before each event.
-
----
-
-## ☁️ Deployment
-
-See **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**. Short version: push to GitHub → import into Vercel → framework **Vite**, build `npm run build`, output `dist` → Deploy.
-
----
-
-## 📄 License & attribution
-
-Code: MIT (or your team's choice). Mission facts come from public NASA sources; please keep the source links and the non-endorsement disclaimer.
 =======
 # Nasa-Space-project
 Project purpose To tell the stories of NASA machines left on the Moon, on Mars and in deep space — what they were, what they found, how they ended and where they are now.
->>>>>>> 120cdf3be54f587849828e5b95e135e0d1dceeca
